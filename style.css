@@ -96,10 +96,10 @@ button{
 
 .loader-glow{
     position:absolute;
-    width: 340px;
-    height: 340px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(232,201,176,0.6) transparent 70%);
+    background: radial-gradient(circle, rgba(232,201,176,0.6),transparent 70%);
     filter: blur(30px);
     animation:breathe 3s ease-in-out infinite;
 }
