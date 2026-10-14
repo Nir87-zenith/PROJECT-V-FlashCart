@@ -4,6 +4,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="loader">
+        <div class="loader-glow"></div>
+        <div class="glass-slab">
+            <img src="Images/flashcart-logo-premium.png" alt="FlashCart Logo">
+            <h1>FlashCart</h1>
+        </div>
+    </div>
    <header>
     <nav>
         <div class="logo">
@@ -19,5 +26,12 @@
         <button>Cart (0)</button>
     </nav>
    </header> 
+   <script>
+        window.addEventListener('load',function(){
+            setTimeout(function(){
+                document.getElementById("loader").classList.add("hide");
+        },9000);
+    });
+   </script>
 </body>
 </html>
