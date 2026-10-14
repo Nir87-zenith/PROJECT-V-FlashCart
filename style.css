@@ -148,3 +148,58 @@ button{
         left:160%;
     }
 }
+
+.blob{
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index:-1;
+}
+
+.blob1{
+    width: 420px;
+    height: 420px;
+    background: #E8C9B0;
+    opacity: 0.35;
+    top: -80px;
+    right: 8%;
+}
+
+.blob2{
+    width: 380px;
+    height: 380px;
+    background: #6c6c80;
+    opacity: 0.3;
+    bottom: -100px;
+    left: 5%;
+}
+
+.hero{
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h2{
+    font-size: 56px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin: 0 0 12px;
+}
+
+.hero p{
+    color: #a0a0a8;
+    font-size: 18px;
+    margin: 0 0 28px;
+}
+
+.cta{
+    font-size: 16px;
+    padding: 14px 34px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.3);
+}
