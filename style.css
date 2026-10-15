@@ -203,3 +203,97 @@ button{
     -webkit-backdrop-filter: blur(14px);
     border: 1px solid rgba(255,255,255,0.3);
 }
+
+.products{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 32px;
+}
+
+.products h2{
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0 0 24px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+    gap: 20px;
+}
+
+.card{
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 24px;
+    padding: 24px;
+    text-align: center;
+}
+
+.card-icon{
+    font-size: 48px;
+    margin-bottom: 8px
+}
+
+.card h3{
+    margin: 8px 0 4px;
+    font-weight: 500;
+}
+
+.price{
+    color: #E8C9B0;
+    font-size: 18px;
+    margin: 0 0 6px;
+}
+
+.stock{
+    font-size: 13px;
+    margin: 0 0 16px;
+}
+
+.stock.in{color: #8fd19e;}
+.stock.low{color: #ffb36b;}
+.stock.out{color: #ff7b7b;}
+
+button:disabled{
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.category-bar{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.chip{
+    padding: 8px 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.15);
+    opacity: 1;
+}
+
+.chip.active {
+    background: rgba(232, 201, 176, 0.25);
+    border-color: rgba(232, 201, 176, 0.6);
+}
+
+.card-img {
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.card-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
