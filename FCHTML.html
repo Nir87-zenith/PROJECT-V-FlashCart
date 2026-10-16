@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlashCart</title>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Poppins font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="FCCSS.css" />
+  </head>
+  <body>
+    <!-- ========== LOADING SCREEN (shows for 2 seconds) ========== -->
+    <div id="loader">
+      <div class="loader-logo"><i class="fa-solid fa-bolt"></i> FlashCart</div>
+      <div class="spinner"></div>
+      <p class="loader-text">Loading your deals...</p>
+    </div>
+
+    <!-- ========== MAIN PAGE ========== -->
+    <div id="main-page" class="hidden">
+      <header class="creative-header">
+        <div class="logo">
+          <li><i>FlashCart</i></li>
+        </div>
+
+        <!-- Search Bar Container -->
+        <div class="search-container">
+          <input type="text" placeholder="Search products, brands..." class="search-input" />
+          <button type="submit" class="search-btn">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        </div>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="hero-banner">
+        <!-- Left Content Box -->
+        <div class="hero-content">
+          <span class="hero-subtitle">SUMMER SALE</span>
+          <h1>50% OFFER WEEK</h1>
+          <p>Discover the latest trends in fashion, electronics and more. Up to <strong>50% off!</strong></p>
+          <a href="#products" class="hero-btn">Shop Now &rarr;</a>
+        </div>
+      </section>
+
+      <!-- ========== CATEGORY PILLS ========== -->
+      <div class="container">
+        <div class="categories">
+          <button class="pill active" data-category="Fashion">Fashion</button>
+          <button class="pill" data-category="Groceries">Groceries</button>
+          <button class="pill" data-category="Stationaries">Stationaries</button>
+          <button class="pill" data-category="Electronics">Electronics</button>
+          <button class="pill" data-category="Sports">Sports</button>
+          <button class="pill" data-category="Video Games">Video Games</button>
+        </div>
+
+        <!-- Products appear here (filled by script.js) -->
+        <h2 class="section-title" id="section-title">Fashion</h2>
+        <div class="product-grid" id="products"></div>
+      </div>
+
+      <!-- ========== FEATURES STRIP ========== -->
+      <section class="features">
+        <div class="feature">
+          <i class="fa-solid fa-truck-fast"></i>
+          <h4>Free Delivery</h4>
+          <p>On orders above ₹499</p>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h4>Secure Payment</h4>
+          <p>100% safe checkout</p>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-rotate-left"></i>
+          <h4>Easy Returns</h4>
+          <p>7-day return policy</p>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-headset"></i>
+          <h4>24/7 Support</h4>
+          <p>We're always here to help</p>
+        </div>
+      </section>
+
+      <!-- ========== FOOTER ========== -->
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="footer-col">
+            <h3 class="footer-logo"><i class="fa-solid fa-bolt"></i> FlashCart</h3>
+            <p>Your one-stop shop for fashion, groceries, electronics and more. Fast, simple and affordable.</p>
+            <div class="social">
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Categories</h4>
+            <ul>
+              <li><a href="#">Fashion</a></li>
+              <li><a href="#">Groceries</a></li>
+              <li><a href="#">Electronics</a></li>
+              <li><a href="#">Sports</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact Us</h4>
+            <ul>
+              <li><i class="fa-solid fa-location-dot"></i> Kochi, Kerala, India</li>
+              <li><i class="fa-solid fa-phone"></i> +91 98765 43210</li>
+              <li><i class="fa-solid fa-envelope"></i> support@flashcart.com</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 FlashCart. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ========== ORDER POPUP ========== -->
+    <div id="order-popup" class="popup-overlay">
+      <div class="popup-box">
+        <i class="fa-solid fa-circle-check popup-icon"></i>
+        <h2>Your Order is on the way!</h2>
+        <p id="order-product"></p>
+        <button id="popup-ok" class="hero-btn popup-btn">OK</button>
+      </div>
+    </div>
+
+    <script src="FCJS2.js"></script>
+  </body>
+</html>

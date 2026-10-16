@@ -1,0 +1,642 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f4;
+}
+
+.creative-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #01ab5e, #01ab7b);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius:2px;
+  position: relative;
+  z-index: 10;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo li {
+  margin-top: 8px;
+  height: 30px;
+  list-style: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo li:hover {
+  transform: scale(1.5) rotate(0deg);
+}
+
+/* --- Search Bar Styling --- */
+.search-container {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 30px;
+  padding: 5px 15px;
+  border: 1px solid rgb(255, 255, 255);
+  transition: all 0.3s ease;
+  flex: 1;
+  max-width: 400px;
+  margin: 0 20px;
+}
+
+.search-container:focus-within {
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-color: #ffffff;
+}
+
+.search-input {
+  border: black;
+  background: transparent;
+  outline: none;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  width: 100%;
+  padding: 5px;
+  font-family: "Poppins", sans-serif;
+}
+
+.search-container:focus-within .search-input {
+  color: #333;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.search-container:focus-within .search-input::placeholder {
+  color: #aaa;
+}
+
+.search-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #01ab5e;
+  font-size: 16px;
+  padding: 5px;
+  transition: transform 0.1s ease;
+}
+
+.search-container:focus-within .search-btn {
+  color: #ffffff;
+}
+
+
+/* ------------------------- */
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.main-nav ul li {
+  margin-left: 25px;
+  position: relative;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 8px 15px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.main-nav ul li a::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.main-nav ul li a:hover {
+  color: #fff;
+}
+
+.main-nav ul li a:hover::before {
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.creative-header::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  z-index: -1;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .creative-header {
+    justify-content: space-between;
+    padding: 12px 20px;
+  }
+
+  .search-container {
+    order: 3;
+    max-width: 100%;
+    margin: 10px 0 0 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .creative-header {
+    padding: 10px 15px;
+  }
+
+  .main-nav ul li {
+    margin-left: 10px;
+  }
+
+  .main-nav ul li a {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
+}
+
+/* 1. Banner Container Layout */
+.hero-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, #01ab5e, #dce4ef); /* Soft pastel background */
+  border-radius: 30px;
+  margin: 20px 30px;
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* 2. Left Text Content Styling */
+.hero-content {
+  max-width: 500px;
+  z-index: 2;
+}
+
+.hero-subtitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #555; /* Matching your FlashCart green */
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.2;
+  margin: 0 0 15px 0;
+}
+
+.hero-content p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* 3. Call-to-Action Button */
+.hero-btn {
+  display: inline-block;
+  background-color: #01ab5e;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(1, 171, 94, 0.3);
+  transition: all 0.3s ease;
+}
+.hero-btn:hover{
+    background-color: #00ff00;
+}
+
+
+
+/* 4. Right Visual & Background Image */
+.hero-visual {
+  flex: 1;
+  height: 320px;
+  /* Replace this URL with your own banner background image (e.g., headphones, jackets flatlay) */
+  background-image: url('your-summer-products-image.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+
+/* 6. Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .hero-banner {
+    flex-direction: column;
+    padding: 30px 20px;
+    margin: 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-visual {
+    width: 100%;
+    margin-top: 20px;
+    height: 200px;
+  }
+}
+.categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.pill {
+    background-color: #01ab5e;
+    color: #fff;
+    padding: 8px 25px;
+    border-radius: 20px;
+    cursor:pointer;
+    font-size: 14px;
+    border:#111
+}
+.pill:hover{
+    background-color: #00ff00;
+}
+
+
+/* =====================================================
+   NEW STYLES (added below your existing CSS)
+   ===================================================== */
+
+/* ---------- Loading screen ---------- */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #01ab5e, #01ab7b);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+#loader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-logo {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loader-text {
+  margin-top: 20px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+/* ---------- Active pill ---------- */
+.pill.active {
+  background-color: #017a43;
+}
+
+/* ---------- Products ---------- */
+.container {
+  padding: 0 30px;
+}
+
+.section-title {
+  color: #111;
+  font-size: 26px;
+  margin: 0 0 20px 0;
+  border-left: 5px solid #01ab5e;
+  padding-left: 12px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(1, 171, 94, 0.25);
+}
+
+/* Image box - your product image fills this */
+.product-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: #dce4ef;
+  display: block;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-info h3 {
+  font-size: 16px;
+  margin: 0 0 5px 0;
+  color: #111;
+}
+
+.product-info p {
+  font-size: 13px;
+  color: #777;
+  margin: 0 0 10px 0;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #01ab5e;
+}
+
+.add-btn {
+  background-color: #01ab5e;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.add-btn:hover {
+  background-color: #00ff00;
+}
+
+/* ---------- Features strip ---------- */
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: white;
+  margin: 0 30px 40px 30px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.feature {
+  text-align: center;
+  min-width: 150px;
+}
+
+.feature i {
+  font-size: 32px;
+  color: #01ab5e;
+  margin-bottom: 10px;
+}
+
+.feature h4 {
+  margin: 5px 0;
+  color: #111;
+}
+
+.feature p {
+  margin: 0;
+  font-size: 13px;
+  color: #777;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: linear-gradient(135deg, #01ab5e, #017a43);
+  color: white;
+  padding: 40px 30px 0 30px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-logo {
+  font-size: 26px;
+  margin: 0 0 10px 0;
+}
+
+.footer-col h4 {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.footer-col ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-col ul li i {
+  margin-right: 8px;
+}
+
+.social {
+  margin-top: 15px;
+}
+
+.social a {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  background: white;
+  color: #01ab5e;
+  border-radius: 50%;
+  margin-right: 8px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.social a:hover {
+  transform: scale(1.15);
+}
+
+/* ---------- Order popup ---------- */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+}
+
+.popup-overlay.show {
+  display: flex;
+}
+
+.popup-box {
+  background: white;
+  padding: 35px 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 340px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  animation: pop 0.3s ease;
+}
+
+.popup-icon {
+  font-size: 60px;
+  color: #01ab5e;
+}
+
+.popup-box h2 {
+  margin: 15px 0 5px 0;
+  color: #111;
+  font-size: 22px;
+}
+
+.popup-box p {
+  color: #777;
+  font-size: 14px;
+  margin: 0 0 20px 0;
+}
+
+.popup-btn {
+  border: none;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 30px;
+  padding: 15px 0;
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .features {
+    margin: 0 10px 30px 10px;
+  }
+}
