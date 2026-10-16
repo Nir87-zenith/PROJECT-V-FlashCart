@@ -1,53 +1,49 @@
-Copy this into WordPad and replace the items in [brackets].
-
----
-
 **FlashCart Privacy Notice**
-Last updated: [date]
+Last updated: 16-10-2026
 
-**1. Who we are**
-FlashCart ("we", "us") is an online store operated by [your name / business name]. Contact us at [email address].
+**1. About FlashCart**
+FlashCart ("we" or "us") is an online store run by [your name / business name]. For questions, email us at [email address].
 
 **2. Information we collect**
-- Account details: name, email address, phone number, password
-- Order details: delivery address, items bought, payment status
-- Technical data: device type, browser, IP address, pages visited
+- Account information, such as your name, email address, phone number and password
+- Purchase information, including your delivery address, items ordered and payment status
+- Technical information, such as your device and browser type, IP address and pages you visit
 
 **3. How we use your information**
-- To create and manage your account
-- To process orders and deliver products
-- To send order updates and support replies
-- To improve our website and prevent fraud
-- To send offers, only if you agree
+- To set up and maintain your account
+- To fulfil orders and arrange delivery
+- To provide order notifications and respond to support requests
+- To maintain and improve our website and detect or prevent fraud
+- To provide promotional offers when you have given consent
 
 **4. Payments**
-Payments are handled by [payment provider]. We do not store your full card details.
+Your payments are processed by [payment provider]. We do not keep your complete payment card details.
 
-**5. Sharing your information**
-We do not sell your personal data. We share it only with delivery partners, payment providers and service providers who help us run FlashCart, or when the law requires it.
+**5. When we share information**
+We do not sell your personal information. We may provide it to delivery companies, payment processors and other service providers that support our business. We may also disclose information when required by law.
 
 **6. Cookies**
-We use cookies to keep you logged in, remember your cart and understand how the site is used. You can turn cookies off in your browser, but some features may stop working.
+We use cookies to maintain your login, save your cart and learn how visitors use our website. You can disable cookies through your browser settings, although some website features may then be unavailable.
 
-**7. Data security**
-We use reasonable measures to protect your data. No online system is completely secure, so we cannot guarantee absolute security.
+**7. Keeping information secure**
+We take reasonable steps to safeguard your information. However, no internet-based system is entirely secure, and we cannot promise complete security.
 
-**8. Your rights**
-You can ask to see, correct or delete your personal data, or opt out of marketing messages, by emailing [email address].
+**8. Your choices and rights**
+You may request access to, correction of or deletion of your personal information. You can also opt out of marketing messages. To make a request, contact us at [email address].
 
-**9. Data retention**
-We keep your data only as long as needed for the purposes above or as the law requires.
+**9. How long we keep information**
+We retain information only for as long as it is needed for the purposes described here or as required by law.
 
 **10. Children**
-FlashCart is not intended for children under [13/18]. We do not knowingly collect their data.
+FlashCart is not intended for children under [13/18]. We do not knowingly collect personal information from children below that age.
 
-**11. Changes to this notice**
-We may update this notice. The latest version will always be on this page with the date above.
+**11. Updates to this notice**
+We may revise this notice from time to time. The current version and its update date will be posted on this page.
 
-**12. Contact us**
+**12. Contact**
 FlashCart, [address]
 Email: [email address] | Phone: [phone number]
 
 ---
 
-This is a general template, not legal advice. If you will sell to real customers, check it against the privacy laws that apply where you operate.
+This notice is a general template and is not legal advice. Before serving real customers, review it for compliance with the privacy laws that apply where you operate.
