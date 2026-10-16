@@ -69,7 +69,7 @@ visible.forEach(function(p){
 });
 
 
-let cart={};
+let cart=JSON.parse(localStorage.getItem("cart")) || {};
 
 const cartBtn=document.getElementById("cart-btn");
 
@@ -79,6 +79,7 @@ function updateCartButton(){
         total+=cart[id];
     }
     cartBtn.textContent="Cart ("+total+")";
+    localStorage.setItem("cart",JSON.stringify(cart));
     renderCart();
 }
 
@@ -105,6 +106,7 @@ function renderCart(){
 function drawControl(id){
     const p=products.find(function(item){return item.id===id;});
     const box=document.getElementById("ctrl-"+id);
+    if(!box){ return; }
     const qty=cart[id] || 0;
 
     if(qty===0){
@@ -151,4 +153,7 @@ document.getElementById("cart-close").addEventListener("click",function(){
     cartPanel.classList.remove("open");
 });
 
-renderCart();
+for(const id in cart){
+    drawControl(Number(id));
+}
+updateCartButton();
