@@ -1,0 +1,297 @@
+:root {
+    --primary: #172337;
+    --accent: #ff9900;
+    --accent-hover: #e68a00;
+    --light-bg: #E8C9B0;
+    --card-bg: #ffffff;
+    --text: #111111;
+    --price: #172337;
+    --shadow: rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font: inherit;
+}
+
+.topbar {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 1.2rem 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.brand-copy {
+    text-align: left;
+}
+
+.brand img {
+    width: 50px;
+    height: auto;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: clamp(2rem, 3vw, 2.5rem);
+}
+
+.brand-flash {
+    color: var(--accent);
+}
+
+.brand-cart {
+    color: #2196f3;
+}
+
+.brand p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem 3rem;
+}
+
+.container h2 {
+    margin: 0 0 1.5rem;
+    text-align: center;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 180px));
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.product-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    padding: 0.6rem;
+    text-align: center;
+    box-shadow: 0 6px 14px var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+}
+
+.product-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.product-card h3 {
+    margin: 0.4rem 0;
+    font-size: 0.95rem;
+}
+
+.price {
+    color: var(--price);
+    font-weight: bold;
+    margin: 0.25rem 0 0.5rem;
+    font-size: 0.85rem;
+}
+
+.product-card button {
+    background-color: var(--accent);
+    color: var(--primary);
+    border: none;
+    border-radius: 6px;
+    padding: 0.45rem 0.6rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.product-card button:hover {
+    background-color: var(--accent-hover);
+    color: var(--primary);
+    transform: translateY(-1px);
+}
+
+footer {
+    margin: 28px 16px;
+    background-color: var(--primary);
+    color: var(--card-bg);
+    text-align: center;
+    padding: 1rem;
+    font-size: 12px;
+}
+
+footer p {
+    margin: 0;
+}
+
+.terms {
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--accent-hover);
+}
+
+@media (max-width: 600px) {
+    .topbar {
+        padding: 0.9rem 1rem;
+    }
+
+    .brand {
+        gap: 0.5rem;
+    }
+
+    .brand img {
+        width: 40px;
+    }
+
+    .brand h1 {
+        font-size: 1.8rem;
+    }
+
+    .brand p {
+        font-size: 0.75rem;
+    }
+
+    .container {
+        padding: 1.25rem 0.75rem 2rem;
+    }
+
+    .container h2 {
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.65rem;
+    }
+
+    .product-card img {
+        height: 110px;
+    }
+
+    footer {
+        margin: 0;
+        padding: 0.85rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding-top: 2.5rem;
+    }
+}
+
+.login-header {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--primary);
+    padding: 0.9rem 1rem;
+}
+
+.signin-btn {
+    padding: 8px 18px;
+    background: #ff9900;
+    color: #172236;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.signin-btn:hover {
+    background: #e68a00;
+}
+
+/* hide radios but keep them keyboard-accessible */
+.sorting input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sort-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 12px 0 20px;
+}
+
+.sort-bar span {
+    font-weight: bold;
+    color: #172337;
+}
+
+.sort-bar label {
+    padding: 7px 14px;
+    border: 1px solid #888;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    background: #fff;
+}
+
+.sort-bar label:hover {
+    background: #f7f7f7;
+}
+
+/* active button highlight */
+#sort-default:checked ~ .sort-bar label[for="sort-default"],
+#sort-low:checked ~ .sort-bar label[for="sort-low"],
+#sort-high:checked ~ .sort-bar label[for="sort-high"],
+#sort-name:checked ~ .sort-bar label[for="sort-name"],
+#sort-name-desc:checked ~ .sort-bar label[for="sort-name-desc"] {
+    background: #ff9900;
+    border-color: #ff9900;
+    color: #172337;
+    font-weight: bold;
+}
+
+/* keyboard focus */
+.container input[type="radio"]:focus-visible ~ .sort-bar {
+    outline: 2px solid #ff9900;
+    outline-offset: 4px;
+}
+
+#noResults {
+    color: #F98D06;
+    font-weight: bold;
+}

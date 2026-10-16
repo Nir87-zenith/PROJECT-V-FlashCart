@@ -1,0 +1,62 @@
+**FlashCart Terms and Conditions**
+Last updated: [date]
+
+**1. Acceptance of terms**
+By using FlashCart ("we", "us"), you agree to these terms. If you do not agree, please do not use the website.
+
+**2. Eligibility**
+You must be at least [18] years old, or use the site with a parent or guardian's permission.
+
+**3. Your account**
+- Give accurate information when you register.
+- Keep your password secret. You are responsible for activity on your account.
+- Tell us right away if you think someone else has used your account.
+- We may suspend or close accounts that break these terms.
+
+**4. Products and pricing**
+- We try to show accurate descriptions, images and prices, but errors can happen.
+- Prices are in [currency] and may change without notice.
+- If a product is listed at a wrong price, we may cancel the order and refund you.
+
+**5. Orders and payment**
+- An order is confirmed only after we send you a confirmation email.
+- We may cancel an order if an item is out of stock or we suspect fraud.
+- Payments are processed by [payment provider]. You agree to use only payment methods you are allowed to use.
+
+**6. Delivery**
+- Delivery times are estimates, not guarantees.
+- Delivery is available to [areas/countries].
+- Risk of loss passes to you when the order is delivered.
+
+**7. Returns and refunds**
+- You may return most items within [7/14/30] days of delivery if they are unused and in original packaging.
+- Some items, such as [perishable or personal items], cannot be returned.
+- Refunds go to your original payment method within [number] days of us receiving the return.
+
+**8. Acceptable use**
+You agree not to:
+- Use the site for anything illegal or fraudulent
+- Try to hack, disrupt or overload the website
+- Copy or resell our content without permission
+- Post false or harmful reviews
+
+**9. Intellectual property**
+The FlashCart name, logo, design and content belong to us or our licensors. You may not use them without written permission.
+
+**10. Limitation of liability**
+To the extent the law allows, FlashCart is not liable for indirect or consequential losses arising from use of the site. Our total liability for any order is limited to the amount you paid for it.
+
+**11. Privacy**
+Our use of your personal data is explained in our Privacy Notice.
+
+**12. Changes to these terms**
+We may update these terms at any time. Continued use of the site means you accept the updated terms.
+
+**13. Governing law**
+These terms are governed by the laws of [country/state]. Disputes will be handled by the courts of [city/country].
+
+**14. Contact us**
+FlashCart, [address]
+Email: [email address] | Phone: [phone number]
+
+---

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashCart</title>
+    <link rel="stylesheet" href="searchbar.css">
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="loading.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search&display=block">
+    <script src="search.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <img src="logo.png" alt="FlashCart Logo">
+            <div class="brand-copy">
+                <h1><span class="brand-flash">Flash</span><span class="brand-cart">Cart</span></h1>
+                <p>Everything you need, in one cart</p>
+            </div>
+        </div>
+    </header>
+    <header class="login-header">
+        <a href="login page.html" class="signin-btn">Sign In</a>
+    </header>
+
+
+    <main class="container">
+        <form class="search-bar" role="search">
+            <div class="oval-search-bar">
+                <input id="productSearch" type="search" placeholder="Search for products..." aria-label="Search for products">
+                <button type="submit" aria-label="Search">
+                    <span class="material-symbols-rounded" aria-hidden="true">search</span>
+                </button>
+            </div>
+        </form>
+
+        <section class="sorting" aria-label="Sort and browse products">
+            <h2>Popular Products</h2>
+
+            <input type="radio" name="sort" id="sort-default" value="featured" checked>
+            <input type="radio" name="sort" id="sort-low" value="price-ascending">
+            <input type="radio" name="sort" id="sort-high" value="price-descending">
+            <input type="radio" name="sort" id="sort-name" value="name-ascending">
+            <input type="radio" name="sort" id="sort-name-desc" value="name-descending">
+
+            <div class="sort-bar" role="group" aria-label="Sort products">
+                <span>Sort by:</span>
+                <label for="sort-default">Featured</label>
+                <label for="sort-low">Price: Low to High</label>
+                <label for="sort-high">Price: High to Low</label>
+                <label for="sort-name">Name: A to Z</label>
+                <label for="sort-name-desc">Name: Z to A</label>
+            </div>
+
+            <section class="products" aria-label="Products">
+                    <article class="product-card">
+                    <img src="laptop.png" alt="Laptop">
+                    <h3>Laptop</h3>
+                    <p class="price">$800.00</p>
+                    <button type="button">Add to cart</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="fridge.png" alt="Refrigerator">
+                    <h3>Refrigerator</h3>
+                    <p class="price">$150.00</p>
+                    <button type="button">Add to cart</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="Fruits.png" alt="Fruits">
+                    <h3>Fruits</h3>
+                    <p class="price">$5.00</p>
+                    <button type="button">Add to cart</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="tv.png" alt="Television">
+                    <h3>Television</h3>
+                    <p class="price">$300.00</p>
+                    <button type="button">Add to cart</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="mobile.png" alt="Mobile">
+                    <h3>Mobile</h3>
+                    <p class="price">$500.00</p>
+                    <button type="button">Add to cart</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="chips.png" alt="Chips">
+                    <h3>Chips</h3>
+                    <p class="price">$3.00</p>
+                    <button type="button">Add to cart</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="ac.png" alt="Air Conditioner">
+                    <h3>Air Conditioner</h3>
+                    <p class="price">$30.00</p>
+                    <button type="button">Add to cart</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="glasses.png" alt="Glasses">
+                    <h3>Glasses</h3>
+                    <p class="price">$13.00</p>
+                    <button type="button">Add to cart</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="keyboard.png" alt="Wireless Keyboard">
+                    <h3>Wireless Keyboard</h3>
+                    <p class="price">$15.00</p>
+                    <button type="button">Add to cart</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="Bag.png" alt="Bag">
+                    <h3>Bag</h3>
+                    <p class="price">$10.00</p>
+                    <button type="button">Add to cart</button>
+                </article>
+                <p id="noResults" hidden> No Products Found</p> 
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p class="terms">
+            By continuing, you agree to FlashCart's
+            <a href="terms.txt">Terms of Use</a> and
+            <a href="privacy notice.txt">Privacy Notice</a>
+        </p>
+        <p class="copyright">© 2026 FlashCart. All rights reserved.</p>
+        <a href="">Contact Us</a>
+    </footer>
+
+    <div id="loader">
+        <div class="loader-glow"></div>
+        <div class="glass-slab">
+            <img src="logo.png" alt="FlashCart Logo">
+            <h1>FlashCart</h1>
+            <p>Everything you need, in one cart</p>
+        </div>
+    </div>
+
+    <script>
+        const productGrid = document.querySelector(".products");
+        const originalCards = Array.from(productGrid.querySelectorAll(".product-card"));
+
+        document.querySelectorAll('input[name="sort"]').forEach((control) => {
+            control.addEventListener("change", () => {
+                const sortedCards = [...originalCards];
+
+                switch (control.value) {
+                    case "price-ascending":
+                        sortedCards.sort((a, b) => getPrice(a) - getPrice(b));
+                        break;
+                    case "price-descending":
+                        sortedCards.sort((a, b) => getPrice(b) - getPrice(a));
+                        break;
+                    case "name-ascending":
+                        sortedCards.sort((a, b) => getName(a).localeCompare(getName(b)));
+                        break;
+                    case "name-descending":
+                        sortedCards.sort((a, b) => getName(b).localeCompare(getName(a)));
+                        break;
+                }
+
+                productGrid.append(...sortedCards);
+            });
+        });
+
+        function getPrice( productCard) {
+            return Number(productCard.querySelector(".price").textContent.replace(/[^0-9.]/g, ""));
+        }
+
+        function getName(productCard) {
+            return productCard.querySelector("h3").textContent.trim();
+        }
+
+        window.addEventListener("load", () => {
+            window.setTimeout(() => {
+                document.getElementById("loader").classList.add("hide");
+            }, 4000);
+        });
+    </script>
+</body>
+</html>

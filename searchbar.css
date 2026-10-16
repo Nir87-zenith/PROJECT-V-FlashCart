@@ -1,0 +1,86 @@
+/* Makes the filter work: author CSS like display:flex on .product-card overrides the hidden attribute */
+[hidden] {
+    display: none !important;
+}
+
+/* Google's stylesheet only loads the font; this class actually renders the icon */
+.material-symbols-rounded {
+    font-family: 'Material Symbols Rounded';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    color: #fff;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+}
+
+.oval-search-bar:focus-within {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem auto 2rem;
+    color: #172236;
+    padding: 0 1rem;
+}
+
+.oval-search-bar {
+    display: flex;
+    align-items: center;
+    width: min(100%, 700px);
+    border: 2px solid var(--primary, #2563eb);
+    border-radius: 999px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.oval-search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.oval-search-bar button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 52px;
+    border: none;
+    background: var(--accent, #2563eb);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.oval-search-bar button:hover {
+    background: var(--accent-hover, #1d4ed8);
+}
+
+@media (max-width: 600px) {
+    .search-bar {
+        margin: 1rem auto 1.25rem;
+    }
+
+    .oval-search-bar input {
+        min-width: 0;
+        padding: 0.75rem;
+        font-size: 0.95rem;
+    }
+
+    .oval-search-bar button {
+        width: 48px;
+        height: 46px;
+    }
+}

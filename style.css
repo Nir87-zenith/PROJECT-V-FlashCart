@@ -1,0 +1,206 @@
+:root {
+    --navy: #172337;
+    --orange: #ff9900;
+    --orange-hover: #e68a00;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #111111;
+}
+
+.auth-frame {
+    width: 400px;
+    max-width: calc(100% - 32px);
+    margin: 30px auto 0;
+    padding: 3px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--navy), var(--orange));
+}
+
+.logo {
+    margin: 0;
+    padding: 24px 20px 20px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 9px 9px 0 0;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.logo h1 {
+    margin: 0;
+    color: var(--navy);
+    font-size: 34px;
+    text-transform: uppercase;
+}
+
+.logo p {
+    margin: 8px 0 0;
+    font-size: 13px;
+}
+
+.login-box {
+    margin: 0;
+    padding: 24px;
+    border-radius: 0 0 9px 9px;
+    background: #ffffff;
+}
+
+.login-box h2 {
+    margin: 0 0 22px;
+    color: var(--navy);
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.login-box label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.login-box input {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 11px;
+    border: 1px solid #888888;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.login-box input:focus {
+    border-color: var(--orange);
+    outline: 2px solid var(--orange);
+}
+
+button {
+    width: 100%;
+    padding: 11px;
+    border: 0;
+    border-radius: 5px;
+    color: var(--navy);
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.sign-in-button {
+    background: var(--orange);
+    color: var(--navy);
+}
+
+.sign-in-button:hover {
+    background: var(--orange-hover);
+}
+
+hr {
+    margin: 22px 0;
+    border: 0;
+    border-top: 1px solid #dddddd;
+}
+
+.help {
+    margin-bottom: 8px;
+}
+
+.create-account {
+    margin-top: 0;
+    border: 1px solid #888888;
+    background: #ffffff;
+}
+
+.create-account:hover {
+    background: #f7f7f7;
+}
+
+#message:empty {
+    display: none;
+}
+
+footer {
+    margin: 24px 16px;
+    color: #555555;
+    font-size: 12px;
+    text-align: center;
+}
+
+.terms {
+    line-height: 1.6;
+}
+
+footer a {
+    color: #007185;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 16px;
+}
+
+@media (max-width: 480px) {
+    .auth-frame {
+        max-width: calc(100% - 24px);
+        margin-top: 16px;
+        padding: 2px;
+        border-radius: 10px;
+    }
+
+    .logo {
+        padding: 20px 16px 16px;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    .logo h1 {
+        font-size: 28px;
+    }
+
+    .login-box {
+        padding: 20px 16px;
+    }
+
+    .login-box h2 {
+        margin-bottom: 18px;
+    }
+
+    .login-box input,
+    button {
+        font-size: 16px;
+    }
+
+    footer {
+        margin: 18px 12px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .auth-frame {
+        width: 420px;
+        margin-top: 40px;
+    }
+
+    .logo {
+        padding-top: 28px;
+    }
+
+    .login-box {
+        padding: 28px;
+    }
+}
