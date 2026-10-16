@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flash Cart | Luxury Shopping</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOGIN PAGE: FIRST SCREEN -->
+  <section id="loginPage" class="login-screen">
+    <div class="login-card">
+      <div class="brand">⚡ FLASH <span>CART</span></div>
+      <p class="tagline">THE ART OF LUXURY SHOPPING</p>
+      <h1 id="authTitle">Welcome Back</h1>
+      <p id="authSubtitle">Sign in to discover something exceptional.</p>
+
+      <form id="authForm">
+        <div id="nameField" class="field hidden">
+          <label for="userName">Full Name</label>
+          <input id="userName" type="text" placeholder="Your name">
+        </div>
+
+        <div class="field">
+          <label for="userEmail">Email Address</label>
+          <input id="userEmail" type="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="field">
+          <label for="userPassword">Password</label>
+          <input id="userPassword" type="password"
+            placeholder="Enter your password" minlength="6" required>
+        </div>
+
+        <button class="gold-btn full" type="submit" id="authSubmit">
+          SIGN IN
+        </button>
+      </form>
+
+      <p id="authMessage" class="message" role="status"></p>
+
+      <p class="switch">
+        <span id="switchText">New to Flash Cart?</span>
+        <button type="button" id="switchBtn">Create account</button>
+      </p>
+      <p class="login-note">A PREMIUM SHOPPING EXPERIENCE</p>
+    </div>
+  </section>
+
+  <!-- SHOPPING WEBSITE: HIDDEN UNTIL LOGIN -->
+  <div id="shopPage" class="hidden">
+
+    <header class="navbar">
+      <a class="brand" href="#" onclick="showHome(); return false;">
+        ⚡ FLASH <span>CART</span>
+      </a>
+
+      <form id="searchForm" class="search">
+        <input id="searchInput" type="search"
+          placeholder="Search luxury finds...">
+        <button type="submit">SEARCH</button>
+      </form>
+
+      <nav>
+        <button onclick="showHome()">Home</button>
+        <button onclick="showCart()">🛒 Cart (<span id="cartCount">0</span>)</button>
+        <button onclick="logout()">Logout</button>
+      </nav>
+    </header>
+
+    <!-- HOME -->
+    <main id="homePage">
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">THE LUXURY COLLECTION</p>
+          <h1>Elegance in<br>Every Detail.</h1>
+          <p>Discover exceptional style, modern technology and timeless essentials.</p>
+          <button class="gold-btn" onclick="scrollToProducts()">
+            EXPLORE COLLECTION →
+          </button>
+        </div>
+          <div class="hero-art" aria-hidden="true">✦</div>
+      </section>
+
+      <section class="section">
+        <p class="eyebrow">CURATED FOR YOU</p>
+        <h2>Shop by Category</h2>
+
+        <div class="categories">
+          <button class="category active" onclick="filterCategory('All',this)">
+            <span>✦</span>All Products
+          </button>
+          <button class="category" onclick="filterCategory('Electronics',this)">
+            <span>🎧</span>Electronics
+          </button>
+          <button class="category" onclick="filterCategory('Fashion',this)">
+            <span>👔</span>Fashion
+          </button>
+          <button class="category" onclick="filterCategory('Home',this)">
+            <span>🏠</span>Home
+          </button>
+          <button class="category" onclick="filterCategory('Beauty',this)">
+            <span>✧</span>Beauty
+          </button>
+          <button class="category" onclick="filterCategory('Books',this)">
+            <span>📚</span>Books
+          </button>
+        </div>
+      </section>
+
+      <section class="section" id="products">
+        <div class="heading-row">
+          <div>
+            <p class="eyebrow">THE SELECTION</p>
+            <h2 id="productHeading">Featured Products</h2>
+          </div>
+          <button class="outline-btn" onclick="filterCategory('All')">
+            VIEW ALL
+          </button>
+        </div>
+        <div id="productGrid" class="product-grid"></div>
+      </section>
+
+      <section class="benefits">
+        <div><span>✦</span><h3>Exceptional Finds</h3><p>Carefully selected products</p></div>
+        <div><span>◇</span><h3>Secure Experience</h3><p>Shop with confidence</p></div>
+        <div><span>↗</span><h3>Fast Delivery</h3><p>Convenience at your door</p></div>
+      </section>
+    </main>
+
+    <!-- CART -->
+    <main id="cartPage" class="section hidden">
+      <p class="eyebrow">YOUR SELECTION</p>
+      <h1>Shopping Cart</h1>
+      <div class="cart-layout">
+        <div id="cartItems"></div>
+
+        <aside class="summary">
+          <h2>Order Summary</h2>
+          <div class="summary-row">
+            <span>Subtotal</span><strong id="subtotal">₹0</strong>
+          </div>
+          <div class="summary-row">
+            <span>Delivery</span><strong id="delivery">₹0</strong>
+          </div>
+          <hr>
+          <div class="summary-row total">
+            <span>Total</span><strong id="total">₹0</strong>
+          </div>
+          <button class="gold-btn full" onclick="checkout()">CHECKOUT</button>
+          <p class="note">Demo project. No real payment is processed.</p>
+        </aside>
+      </div>
+      <button class="outline-btn back-btn" onclick="showHome()">← CONTINUE SHOPPING</button>
+    </main>
+
+    <footer>
+      <div class="brand">⚡ FLASH <span>CART</span></div>
+      <p>Luxury in every choice.</p>
+      <p>© 2026 Flash Cart | College Project</p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
