@@ -1,169 +1,103 @@
 
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flash Cart | Luxury Shopping</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Flash Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- LOGIN PAGE: FIRST SCREEN -->
-  <section id="loginPage" class="login-screen">
-    <div class="login-card">
-      <div class="brand">⚡ FLASH <span>CART</span></div>
-      <p class="tagline">THE ART OF LUXURY SHOPPING</p>
-      <h1 id="authTitle">Welcome Back</h1>
-      <p id="authSubtitle">Sign in to discover something exceptional.</p>
+    <!-- Login Page -->
+    <div id="loginPage" class="login-page">
+        <div class="login-box">
+            <h1>Flash <span>Cart</span></h1>
+            <p>Your favourite shopping destination</p>
 
-      <form id="authForm">
-        <div id="nameField" class="field hidden">
-          <label for="userName">Full Name</label>
-          <input id="userName" type="text" placeholder="Your name">
+            <form id="loginForm">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label>Password</label>
+                <input type="password" id="password"
+                       placeholder="Enter password"
+                       minlength="6" required>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <p class="small-text">Demo website for college project</p>
         </div>
-
-        <div class="field">
-          <label for="userEmail">Email Address</label>
-          <input id="userEmail" type="email" placeholder="Enter your email" required>
-        </div>
-
-        <div class="field">
-          <label for="userPassword">Password</label>
-          <input id="userPassword" type="password"
-            placeholder="Enter your password" minlength="6" required>
-        </div>
-
-        <button class="gold-btn full" type="submit" id="authSubmit">
-          SIGN IN
-        </button>
-      </form>
-
-      <p id="authMessage" class="message" role="status"></p>
-
-      <p class="switch">
-        <span id="switchText">New to Flash Cart?</span>
-        <button type="button" id="switchBtn">Create account</button>
-      </p>
-      <p class="login-note">A PREMIUM SHOPPING EXPERIENCE</p>
     </div>
-  </section>
 
-  <!-- SHOPPING WEBSITE: HIDDEN UNTIL LOGIN -->
-  <div id="shopPage" class="hidden">
+    <!-- Main Website -->
+    <div id="mainPage" class="hidden">
 
-    <header class="navbar">
-      <a class="brand" href="#" onclick="showHome(); return false;">
-        ⚡ FLASH <span>CART</span>
-      </a>
+        <header>
+            <h2>Flash <span>Cart</span></h2>
 
-      <form id="searchForm" class="search">
-        <input id="searchInput" type="search"
-          placeholder="Search luxury finds...">
-        <button type="submit">SEARCH</button>
-      </form>
+            <div>
+                <button onclick="showHome()">Home</button>
+                <button onclick="showCart()">Cart 🛒 (<span id="cartCount">0</span>)</button>
+                <button onclick="logout()">Logout</button>
+            </div>
+        </header>
 
-      <nav>
-        <button onclick="showHome()">Home</button>
-        <button onclick="showCart()">🛒 Cart (<span id="cartCount">0</span>)</button>
-        <button onclick="logout()">Logout</button>
-      </nav>
-    </header>
+        <!-- Homepage -->
+        <div id="homePage">
 
-    <!-- HOME -->
-    <main id="homePage">
-      <section class="hero">
-        <div class="hero-content">
-          <p class="eyebrow">THE LUXURY COLLECTION</p>
-          <h1>Elegance in<br>Every Detail.</h1>
-          <p>Discover exceptional style, modern technology and timeless essentials.</p>
-          <button class="gold-btn" onclick="scrollToProducts()">
-            EXPLORE COLLECTION →
-          </button>
+            <section class="banner">
+                <h1>Big Deals. Better Choices.</h1>
+                <p>Discover your favourite products at amazing prices.</p>
+                <button onclick="goToProducts()">Shop Now</button>
+            </section>
+
+            <section class="section">
+                <h2>Shop by Category</h2>
+
+                <div class="categories">
+                    <button onclick="filterProducts('All')">All</button>
+                    <button onclick="filterProducts('Electronics')">Electronics</button>
+                    <button onclick="filterProducts('Fashion')">Fashion</button>
+                    <button onclick="filterProducts('Home')">Home</button>
+                    <button onclick="filterProducts('Beauty')">Beauty</button>
+                </div>
+            </section>
+
+            <section class="section" id="productsSection">
+                <h2 id="productTitle">Our Products</h2>
+
+                <input type="text" id="searchBox"
+                       placeholder="Search products..."
+                       oninput="searchProducts()">
+
+                <div id="productList" class="product-list"></div>
+            </section>
+
         </div>
-          <div class="hero-art" aria-hidden="true">✦</div>
-      </section>
 
-      <section class="section">
-        <p class="eyebrow">CURATED FOR YOU</p>
-        <h2>Shop by Category</h2>
+        <!-- Shopping Cart -->
+        <div id="cartPage" class="section hidden">
+            <h1>My Shopping Cart</h1>
 
-        <div class="categories">
-          <button class="category active" onclick="filterCategory('All',this)">
-            <span>✦</span>All Products
-          </button>
-          <button class="category" onclick="filterCategory('Electronics',this)">
-            <span>🎧</span>Electronics
-          </button>
-          <button class="category" onclick="filterCategory('Fashion',this)">
-            <span>👔</span>Fashion
-          </button>
-          <button class="category" onclick="filterCategory('Home',this)">
-            <span>🏠</span>Home
-          </button>
-          <button class="category" onclick="filterCategory('Beauty',this)">
-            <span>✧</span>Beauty
-          </button>
-          <button class="category" onclick="filterCategory('Books',this)">
-            <span>📚</span>Books
-          </button>
+            <div id="cartItems"></div>
+
+            <div class="total-box">
+                <h2>Total: ₹<span id="totalPrice">0</span></h2>
+                <button onclick="checkout()">Place Order</button>
+                <button class="back-button" onclick="showHome()">Continue Shopping</button>
+            </div>
         </div>
-      </section>
 
-      <section class="section" id="products">
-        <div class="heading-row">
-          <div>
-            <p class="eyebrow">THE SELECTION</p>
-            <h2 id="productHeading">Featured Products</h2>
-          </div>
-          <button class="outline-btn" onclick="filterCategory('All')">
-            VIEW ALL
-          </button>
-        </div>
-        <div id="productGrid" class="product-grid"></div>
-      </section>
+        <footer>
+            <h2>Flash Cart</h2>
+            <p>Making shopping simple and enjoyable.</p>
+            <p>© 2026 Flash Cart | College Project</p>
+        </footer>
 
-      <section class="benefits">
-        <div><span>✦</span><h3>Exceptional Finds</h3><p>Carefully selected products</p></div>
-        <div><span>◇</span><h3>Secure Experience</h3><p>Shop with confidence</p></div>
-        <div><span>↗</span><h3>Fast Delivery</h3><p>Convenience at your door</p></div>
-      </section>
-    </main>
+    </div>
 
-    <!-- CART -->
-    <main id="cartPage" class="section hidden">
-      <p class="eyebrow">YOUR SELECTION</p>
-      <h1>Shopping Cart</h1>
-      <div class="cart-layout">
-        <div id="cartItems"></div>
-
-        <aside class="summary">
-          <h2>Order Summary</h2>
-          <div class="summary-row">
-            <span>Subtotal</span><strong id="subtotal">₹0</strong>
-          </div>
-          <div class="summary-row">
-            <span>Delivery</span><strong id="delivery">₹0</strong>
-          </div>
-          <hr>
-          <div class="summary-row total">
-            <span>Total</span><strong id="total">₹0</strong>
-          </div>
-          <button class="gold-btn full" onclick="checkout()">CHECKOUT</button>
-          <p class="note">Demo project. No real payment is processed.</p>
-        </aside>
-      </div>
-      <button class="outline-btn back-btn" onclick="showHome()">← CONTINUE SHOPPING</button>
-    </main>
-
-    <footer>
-      <div class="brand">⚡ FLASH <span>CART</span></div>
-      <p>Luxury in every choice.</p>
-      <p>© 2026 Flash Cart | College Project</p>
-    </footer>
-  </div>
-
-  <div id="toast" class="toast" role="status"></div>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
