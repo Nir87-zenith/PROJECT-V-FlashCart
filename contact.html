@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact FlashCart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="Images/flashcart-logo-premium.png" alt="FlashCart Logo">
+                <span>FlashCart</span>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button>Cart (0)</button>
+        </nav>
+    </header>
+    <main>
+        <section class="about">
+            <h2>Contact Us</h2>
+            <p class="about-intro">Have a question? Send us a message and we'll get back to you.</p>
+            <div class="card contact-card">
+                <input type="text" id="c-name" placeholder="Your name">
+                <input type="email" id="c-email" placeholder="Your email">
+                <textarea id="c-msg" rows="4" placeholder="Your message"></textarea>
+                <button id="send-btn">Send Message</button> 
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-brand">
+            <img src="Images/flashcart-logo-premium.png" alt="FlashCart Logo">
+            <span>FlashCart</span>
+        </div>
+        <p class="footer-copy">© 2026 FlashCart. All rights reserved.</p>
+    </footer>
+
+    <script>
+    document.getElementById("send-btn").addEventListener("click", function(){
+        const name = document.getElementById("c-name").value.trim();
+        const email = document.getElementById("c-email").value.trim();
+        const msg = document.getElementById("c-msg").value.trim();
+
+    if(name === "" || email === "" || msg === ""){
+        alert("Please fill in all the fields.");
+        return;
+    }
+
+    if(!email.includes("@") || !email.includes(".")){
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    alert("Thanks, " + name + "! Your message has been sent.");
+
+    document.getElementById("c-name").value = "";
+    document.getElementById("c-email").value = "";
+    document.getElementById("c-msg").value = "";
+});
+</script>
+
+</body>
+</html>
