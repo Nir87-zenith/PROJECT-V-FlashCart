@@ -39,7 +39,7 @@ const visible=selected==="All" ? products : products.filter(function(p) { return
 
 const grid=document.getElementById("product-grid");
 
-products.forEach(function(p){
+visible.forEach(function(p){
     let stockText,stockClass;
 
     if(p.stock===0){
@@ -63,7 +63,92 @@ products.forEach(function(p){
             <h3>${p.name}</h3>
             <p class="price">₹${p.price}</p>
             <p class="stock ${stockClass}">${stockText}</p>
-            <button class="add-btn" data-id="${p.id}" ${p.stock===0 ? "disabled":""}>Add to Cart</button>
+            <div class="cart-ctrl" id="ctrl-${p.id}"><button class="add-btn" data-id="${p.id}" ${p.stock===0 ? "disabled":""}>Add to Cart</button></div>
         </div>
     `;
 });
+
+
+let cart={};
+
+const cartBtn=document.getElementById("cart-btn");
+
+function updateCartButton(){
+    let total=0;
+    for(const id in cart){
+        total+=cart[id];
+    }
+    cartBtn.textContent="Cart ("+total+")";
+    renderCart();
+}
+
+function renderCart(){
+    const list = document.getElementById("cart-items");
+    let multiplication = "";
+    let total = 0;
+
+    for(const id in cart){
+        const p = products.find(function(item){ return item.id === Number(id); });
+        const lineTotal = p.price * cart[id];
+        total += lineTotal;
+        multiplication += `<div class="cart-row"><span>${p.name} x ${cart[id]}</span><span>₹${lineTotal}</span></div>`;
+    }
+
+    if(multiplication=== ""){
+        multiplication = `<p class="cart-empty">Your cart is empty</p>`;
+    }
+
+    list.innerHTML = multiplication;
+    document.getElementById("cart-total").textContent = "₹" + total;
+}
+
+function drawControl(id){
+    const p=products.find(function(item){return item.id===id;});
+    const box=document.getElementById("ctrl-"+id);
+    const qty=cart[id] || 0;
+
+    if(qty===0){
+        box.innerHTML='<button class="add-btn" data-id="'+id+'" '+ (p.stock===0 ? 'disabled' : '') +'>Add to Cart</button>';
+    }else{
+        box.innerHTML=`
+            <div class="qty">
+                <button class="minus" data-id="${id}">-</button>
+                <span>${qty}</span>
+                <button class="plus" data-id="${id}" ${qty>=p.stock ? "disabled" : ""}>+</button>
+            </div>`;
+    }
+}
+
+grid.addEventListener("click",function(e){
+    const id=Number(e.target.dataset.id);
+    const p=products.find(function(item){return item.id===id;});
+    const cls=e.target.classList;
+
+    if(cls.contains("add-btn")){
+        cart[id]=1;
+    }else if(cls.contains("plus")&&(cart[id] || 0)<p.stock){
+        cart[id]++;
+    }else if(cls.contains("minus")){
+        cart[id]--;
+        if(cart[id]===0){
+            delete cart[id];
+        }
+    }else{
+        return;
+    }
+
+    drawControl(id);
+    updateCartButton();
+});
+
+const cartPanel=document.getElementById("cart-panel");
+
+cartBtn.addEventListener("click",function(){
+    cartPanel.classList.toggle("open");
+});
+
+document.getElementById("cart-close").addEventListener("click",function(){
+    cartPanel.classList.remove("open");
+});
+
+renderCart();

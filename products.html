@@ -21,9 +21,10 @@
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-        <button>Cart (0)</button>
+        <button id="cart-btn">Cart (0)</button>
     </nav>
    </header> 
+
    <main>
         <section class="products">
             <h2>Our Products</h2>
@@ -31,6 +32,19 @@
             <div class="grid" id="product-grid"></div>
         </section>
    </main>
+
+   <div class="cart-panel" id="cart-panel">
+        <div class="cart-head">
+            <h3>Your Cart</h3>
+            <button id="cart-close">X</button>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-foot">
+            <p>Total Amount: <span id="cart-total">₹0</span></p>
+            <button id="buy-btn">Buy Now</button>
+        </div>
+   </div>
+
    <script src="products.js"></script>
     </body>
 </html>
