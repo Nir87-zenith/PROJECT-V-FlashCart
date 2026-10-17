@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashCart | Loading</title>
+    <link rel="stylesheet" href="loading.css">
+</head>
+<body>
+
+    <div class="loading-screen">
+
+        <h1 class="brand-title">
+            <span class="flash">FLASH</span><span class="cart">CART</span>
+        </h1>
+
+        <p class="loading-text">Getting your cart ready...</p>
+
+        <div class="loading-track">
+            <div class="loading-progress"></div>
+            <img src="truck.png" alt="Delivery Truck" class="loading-truck">
+        </div>
+
+        <p class="loading-percentage">0%</p>
+
+    </div>
+<script>
+    let progress = 0;
+
+    let progressBar = document.querySelector(".loading-progress");
+    let percentageText = document.querySelector(".loading-percentage");
+    let truck = document.querySelector(".loading-truck");
+    let track = document.querySelector(".loading-track");
+    let loadingScreen = document.querySelector(".loading-screen");
+
+    let loading = setInterval(function() {
+
+        if (progress >= 100) {
+            clearInterval(loading);
+
+            setTimeout(function() {
+                loadingScreen.classList.add("fade-out");
+
+                setTimeout(function() {
+                    window.location.href = "home.html";
+                }, 600);
+
+            }, 300);
+
+            return;
+        }
+
+        progress = Math.min(progress + 1, 100);
+
+        progressBar.style.width = progress + "%";
+        percentageText.textContent = progress + "%";
+
+        let trackWidth = track.clientWidth;
+        let truckWidth = truck.clientWidth;
+
+        truck.style.left =
+            (progress / 100) * (trackWidth - truckWidth) + "px";
+
+    }, 30);
+</script>
+</body>
+</html>

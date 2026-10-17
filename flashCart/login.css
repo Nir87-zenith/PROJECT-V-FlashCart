@@ -1,0 +1,281 @@
+body{
+    background-color: #263D2B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+input{
+    display: block;
+    width: 80%;
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+button{
+    display: block;
+    width: 60%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #c65335;
+    color: #f3e5d0;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+}
+img{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+.flash{
+    color: #263d2b;
+}
+.cart{
+    color:#c65335;
+}
+/* Main page background */
+body {
+    background: #263D2B;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* Main login container */
+.login-container {
+    width: 88%;
+    max-width: 1250px;
+    min-height: 540px;
+    margin: 30px auto;
+    padding: 55px 65px;
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        135deg,
+        #FFFDF7 0%,
+        #F3E5D0 100%
+    );
+
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* FlashCart heading */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 4vw, 52px);
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    margin-bottom: 28px;
+    color: #263D2B;
+}
+
+/* Welcome message */
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #263D2B;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+/* Supporting text */
+p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #716D61;
+}
+
+/* Email and password fields */
+input[type="email"],
+input[type="password"] {
+    width: 420px !important;
+    height: 68px !important;
+    min-height: 62px;
+    max-width: 100%;
+    padding: 16px 22px;
+    box-sizing: border-box;
+    border-radius: 14px;
+    font-size: 18px;
+
+
+    font-family: 'DM Sans', sans-serif;
+    color: #263D2B;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    border: 1px solid #D8D0C0;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: #989487;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    background: #FFFFFF;
+    border-color: #C65335;
+
+    box-shadow:
+        0 0 0 4px rgba(198, 83, 53, 0.12);
+}
+
+button[type="submit"],
+input[type="submit"] {
+    min-height: 50px;
+    padding: 0 28px;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+
+    color: #FFFDF7;
+    background: #C65335;
+
+    border: none;
+    border-radius: 13px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px rgba(198, 83, 53, 0.18);
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+    background: #A9432B;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(198, 83, 53, 0.25);
+}
+
+button[type="submit"]:active,
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+.container img {
+    max-width: 110px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .container {
+        width: 92%;
+        min-height: auto;
+        margin: 20px auto;
+        padding: 35px 24px;
+        border-radius: 24px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        min-height: 48px;
+    }
+}
+
+.login-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+/* Center the FlashCart title */
+.login-container h1 {
+    width: 100%;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Center the logo */
+.login-container img {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.login-container h2,
+.login-container h3,
+.login-container p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.login-container input,
+.login-container button {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 320px;
+    max-width: 100%;
+    min-height: 54px;
+    padding: 14px 18px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border-radius: 14px;
+}
+
+button[type="submit"],
+input[type="submit"] {
+    width: 320px;
+    max-width: 100%;
+    min-height: 54px;
+    padding: 14px 20px;
+    box-sizing: border-box;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    input[type="email"],
+    input[type="password"],
+    button[type="submit"],
+    input[type="submit"] {
+        width: 100%;
+    }
+}

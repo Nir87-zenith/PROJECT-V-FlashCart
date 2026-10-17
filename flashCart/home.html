@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FlashCart</title>
+        <link rel="stylesheet" href="home.css">
+    </head>
+    <body>
+        <div class="page-transition-overlay"></div>
+        <header class="navbar">
+    <div class="brand">
+        <img src="logo.png" alt="FlashCart Logo">
+        <h1>
+            <span class="flash">Flash</span><span class="cart">Cart</span>
+        </h1>
+    </div>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="search-input"
+            placeholder="Search for products..."
+        >
+        <button type="button" id="search-button" aria-label="Search">
+            🔍
+        </button>
+    </div>
+
+    <div class="nav-actions">
+        <button type="button" id="wishlist-button" aria-label="Wishlist">
+            ♡ <span>Wishlist</span>
+            <span id="wishlist-count">0</span>
+        </button>
+
+        <button type="button" id="cart-button" aria-label="Shopping cart">
+            🛒 <span>Cart</span>
+            <span id="cart-count">0</span>
+        </button>
+
+        <button type="button" id="account-button" aria-label="Account">
+            👤 <span>Account</span>
+        </button>
+    </div>
+</header>
+
+<div id="cart-panel" class="cart-panel">
+    <div class="cart-header">
+        <h2>Your Shopping Cart</h2>
+        <button id="close-cart" type="button">&times;</button>
+    </div>
+
+    <div id="cart-items">
+        <p class="empty-cart">Your cart is empty.</p>
+    </div>
+
+    <div class="cart-footer">
+        <h3>Total: <span id="cart-total">₹0</span></h3>
+        <button id="checkout-button" type="button">Checkout</button>
+    </div>
+</div>
+        <div class="sale-banner">
+            <div class="sale-content">
+                <h2>Sale</h2>
+                <p>GET 10% OFF</p>
+                <h3>THE 2ND ITEM</h3>
+                <a href="#products" class="shop-button">SHOP NOW</a>
+            </div>
+            <div class="sale-extra">
+            <span class="sale-extra-line"></span>
+            <p>MORE STYLE. MORE SAVINGS.</p>
+            <span class="sale-extra-note">Your next favourite find awaits.</span>
+            </div>
+            <div class="sale-image">
+                <img src="fashion-sale.png" alt="Sale Image">
+            </div>
+        </div>
+        <section class="categories">
+                <h2>shop by category</h2>
+                <div class="category-list">
+    <button class="category active" data-category="all">All Products</button>
+    <button class="category" data-category="electronics">Electronics</button>
+    <button class="category" data-category="fashion">Fashion</button>
+    <button class="category" data-category="home-kitchen">Home &amp; Kitchen</button>
+    <button class="category" data-category="footwear">Footwear</button>
+    <button class="category" data-category="gaming">Gaming</button>
+    <button class="category" data-category="books">Books</button>
+</div>
+            </section>
+<section id="products" class="products">
+
+    <h2>Our Products</h2>
+    <p>Discover Our Latest Collections!</p>
+    <div class="sorting">
+    <label for="sort-products">Sort By:</label>
+
+    <select id="sort-products">
+        <option value="default">Default</option>
+        <option value="low-high">Price: Low to High</option>
+        <option value="high-low">Price: High to Low</option>
+        <option value="rating">Highest Rated</option>
+        <option value="newest">Newest Arrivals</option>
+    </select>
+</div>
+
+    <div class="product-list">
+
+        <!-- Product 1: Wireless Headphones -->
+        <div class="product-card" data-category="electronics" 
+        data-price="1499" data-rating="4.8" data-newest="2">
+            <div class="product-image">
+                <img src="products/headphones.jpg" alt="Wireless Headphones">
+
+                <span class="product-badge">BESTSELLER</span>
+
+                <button class="wishlist" aria-label="Add Wireless Headphones to wishlist">♡</button>
+            </div>
+
+            <p class="product-category">ELECTRONICS</p>
+            <h3>Wireless Headphones</h3>
+            <p class="rating">★★★★★ <span>4.8 / 5</span></p>
+
+            <div class="product-bottom">
+                <div class="product-pricing">
+                    <span class="price">₹1,499</span>
+                    <del>₹1,999</del>
+                </div>
+
+                <button class="add-to-cart"><span>+</span> Add to Cart</button>
+            </div>
+        </div>
+
+
+        <!-- Product 2: Smartwatch -->
+        <div class="product-card" data-category="electronics" data-price="2499" 
+        data-rating="4.7" data-newest="4">
+            <div class="product-image">
+                <img src="products/smartwatch.jpg" alt="Smartwatch">
+
+                <span class="product-badge">POPULAR</span>
+
+                <button class="wishlist" aria-label="Add Smartwatch to wishlist">♡</button>
+            </div>
+
+            <p class="product-category">ELECTRONICS</p>
+            <h3>Smartwatch</h3>
+            <p class="rating">★★★★★ <span>4.7 / 5</span></p>
+
+            <div class="product-bottom">
+                <div class="product-pricing">
+                    <span class="price">₹2,499</span>
+                    <del>₹2,999</del>
+                </div>
+
+                <button class="add-to-cart"><span>+</span> Add to Cart</button>
+            </div>
+        </div>
+
+
+        <!-- Product 3: Classic Sneakers -->
+        <div class="product-card" data-category="footwear" 
+        data-price="1299" data-rating="4.5" data-newest="8">
+            <div class="product-image">
+                <img src="products/sneakers.jpg" alt="Classic Sneakers">
+
+                <span class="product-badge">NEW</span>
+
+                <button class="wishlist" aria-label="Add Classic Sneakers to wishlist">♡</button>
+            </div>
+
+            <p class="product-category">FOOTWEAR</p>
+            <h3>Classic Sneakers</h3>
+            <p class="rating">★★★★☆ <span>4.5 / 5</span></p>
+
+            <div class="product-bottom">
+                <div class="product-pricing">
+                    <span class="price">₹1,299</span>
+                    <del>₹1,599</del>
+                </div>
+
+                <button class="add-to-cart"><span>+</span> Add to Cart</button>
+            </div>
+        </div>
+
+
+        <!-- Product 4: Everyday Backpack -->
+        <div class="product-card" data-category="fashion" 
+        data-price="899" data-rating="4.4" data-newest="3">
+            <div class="product-image">
+                <img src="products/backpack.jpg" alt="Everyday Backpack">
+
+                <span class="product-badge">POPULAR</span>
+
+                <button class="wishlist" aria-label="Add Everyday Backpack to wishlist">♡</button>
+            </div>
+
+            <p class="product-category">FASHION</p>
+            <h3>Everyday Backpack</h3>
+            <p class="rating">★★★★☆ <span>4.4 / 5</span></p>
+
+            <div class="product-bottom">
+                <div class="product-pricing">
+                    <span class="price">₹899</span>
+                    <del>₹1,199</del>
+                </div>
+
+                <button class="add-to-cart"><span>+</span> Add to Cart</button>
+            </div>
+        </div>
+
+
+        <!-- Product 5: Slim Laptop -->
+        <div class="product-card" data-category="electronics" data-price="49999" 
+        data-rating="4.9" data-newest="1">
+            <div class="product-image">
+                <img src="products/laptop.jpg" alt="Slim Laptop">
+
+                <span class="product-badge">FEATURED</span>
+
+                <button class="wishlist" aria-label="Add Slim Laptop to wishlist">♡</button>
+            </div>
+
+            <p class="product-category">ELECTRONICS</p>
+            <h3>Slim Laptop</h3>
+            <p class="rating">★★★★★ <span>4.9 / 5</span></p>
+
+            <div class="product-bottom">
+                <div class="product-pricing">
+                    <span class="price">₹49,999</span>
+                    <del>₹54,999</del>
+                </div>
+
+                <button class="add-to-cart"><span>+</span> Add to Cart</button>
+            </div>
+        </div>
+
+
+        <!-- Product 6: Gaming Controller -->
+        <div class="product-card" data-category="gaming" data-price="2999" 
+        data-rating="4.6" data-newest="5">
+            <div class="product-image">
+                <img src="products/controller.jpg" alt="Gaming Controller">
+
+                <span class="product-badge">GAMING</span>
+
+                <button class="wishlist" aria-label="Add Gaming Controller to wishlist">♡</button>
+            </div>
+
+            <p class="product-category">GAMING</p>
+            <h3>Gaming Controller</h3>
+            <p class="rating">★★★★☆ <span>4.6 / 5</span></p>
+
+            <div class="product-bottom">
+                <div class="product-pricing">
+                    <span class="price">₹2,999</span>
+                    <del>₹3,499</del>
+                </div>
+
+                <button class="add-to-cart"><span>+</span> Add to Cart</button>
+            </div>
+        </div>
+
+
+        <!-- Product 7: Classic Wristwatch -->
+        <div class="product-card" data-category="accessories" data-price="1799" 
+        data-rating="4.8" data-newest="6">
+            <div class="product-image">
+                <img src="products/watch.jpg" alt="Classic Wristwatch">
+
+                <span class="product-badge">CLASSIC</span>
+
+                <button class="wishlist" aria-label="Add Classic Wristwatch to wishlist">♡</button>
+            </div>
+
+            <p class="product-category">ACCESSORIES</p>
+            <h3>Classic Wristwatch</h3>
+            <p class="rating">★★★★★ <span>4.8 / 5</span></p>
+
+            <div class="product-bottom">
+                <div class="product-pricing">
+                    <span class="price">₹1,799</span>
+                    <del>₹2,199</del>
+                </div>
+
+                <button class="add-to-cart"><span>+</span> Add to Cart</button>
+            </div>
+        </div>
+
+
+        <!-- Product 8: Ceramic Coffee Mug -->
+        <div class="product-card" data-category="home-kitchen" data-price="299" 
+        data-rating="4.5" data-newest="7">
+            <div class="product-image">
+                <img src="products/mug.jpg" alt="Ceramic Coffee Mug">
+
+                <span class="product-badge">VALUE PICK</span>
+
+                <button class="wishlist" aria-label="Add Ceramic Coffee Mug to wishlist">♡</button>
+            </div>
+
+            <p class="product-category">HOME & KITCHEN</p>
+            <h3>Ceramic Coffee Mug</h3>
+            <p class="rating">★★★★☆ <span>4.5 / 5</span></p>
+
+            <div class="product-bottom">
+                <div class="product-pricing">
+                    <span class="price">₹299</span>
+                    <del>₹399</del>
+                </div>
+
+                <button class="add-to-cart"><span>+</span> Add to Cart</button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <h2>
+                <span class="footer-flash">Flash</span><span class="footer-cart">Cart</span>
+            </h2>
+
+            <p>
+                Your everyday shopping destination.
+                Discover quality products at prices you'll love.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="#">Home</a>
+            <a href="#products">Our Products</a>
+            <a href="#products">Shop Now</a>
+        </div>
+
+        <div class="footer-links">
+            <h3>Categories</h3>
+            <a href="#products">Electronics</a>
+            <a href="#products">Fashion</a>
+            <a href="#products">Footwear</a>
+            <a href="#products">Home &amp; Kitchen</a>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: support@flashcart.com</p>
+            <p>Customer Support</p>
+            <p>We're here to help!</p>
+        </div>
+
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 FlashCart. All rights reserved.</p>
+        <p>Designed with care for your everyday needs.</p>
+    </div>
+
+</footer>
+</body>
+
+<script>
+    const categoryButtons = document.querySelectorAll(".category");
+    const productCards = document.querySelectorAll(".product-card");
+    const productList = document.querySelector(".product-list");
+    const sortProducts = document.getElementById("sort-products");
+    const searchInput = document.getElementById("search-input");
+    const searchButton = document.getElementById("search-button");
+
+    let selectedCategory = "all";
+
+    const noProductsMessage = document.createElement("p");
+    noProductsMessage.textContent = "No products found in this category.";
+    noProductsMessage.style.display = "none";
+    noProductsMessage.style.gridColumn = "1 / -1";
+
+    productList.appendChild(noProductsMessage);
+
+    categoryButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            selectedCategory = button.dataset.category;
+
+            categoryButtons.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            showProducts();
+        });
+    });
+
+    sortProducts.addEventListener("change", () => {
+        let products = [];
+
+        productCards.forEach(card => {
+            products.push(card);
+        });
+
+        let sortType = sortProducts.value;
+
+        if (sortType === "low-high") {
+            products.sort((a, b) => {
+                return Number(a.dataset.price) - Number(b.dataset.price);
+            });
+        }
+        else if (sortType === "high-low") {
+            products.sort((a, b) => {
+                return Number(b.dataset.price) - Number(a.dataset.price);
+            });
+        }
+        else if (sortType === "rating") {
+            products.sort((a, b) => {
+                return Number(b.dataset.rating) - Number(a.dataset.rating);
+            });
+        }
+        else if (sortType === "newest") {
+            products.sort((a, b) => {
+                return Number(b.dataset.newest) - Number(a.dataset.newest);
+            });
+        }
+
+        products.forEach(card => {
+            productList.appendChild(card);
+        });
+
+        productList.appendChild(noProductsMessage);
+
+        showProducts();
+    });
+   
+function showProducts() {
+    let visibleProducts = 0;
+
+    let searchText = searchInput.value.toLowerCase().trim();
+
+    productCards.forEach(card => {
+        let productCategory = card.dataset.category;
+        let productName = card.querySelector("h3").textContent.toLowerCase();
+
+        let categoryMatch =
+            selectedCategory === "all" ||
+            productCategory === selectedCategory;
+
+        let searchMatch = productName.includes(searchText);
+
+        if (categoryMatch && searchMatch) {
+            card.style.display = "flex";
+            visibleProducts++;
+        }
+        else {
+            card.style.display = "none";
+        }
+    });
+
+    if (visibleProducts === 0) {
+        noProductsMessage.textContent = "No matching products found.";
+        noProductsMessage.style.display = "block";
+    }
+    else {
+        noProductsMessage.style.display = "none";
+    }
+}
+
+searchInput.addEventListener("input", () => {
+    showProducts();
+});
+
+
+searchButton.addEventListener("click", () => {
+    showProducts();
+});
+
+let cart = JSON.parse(localStorage.getItem("flashCart")) || [];
+
+const cartCountDisplay = document.getElementById("cart-count");
+const cartPanel = document.getElementById("cart-panel");
+const cartItemsContainer = document.getElementById("cart-items");
+const cartTotalDisplay = document.getElementById("cart-total");
+
+function saveCart() {
+    localStorage.setItem("flashCart", JSON.stringify(cart));
+}
+
+function updateCart() {
+    const totalItems = cart.reduce(function (sum, item) {
+        return sum + item.quantity;
+    }, 0);
+
+    cartCountDisplay.textContent = totalItems;
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML =
+            '<p class="empty-cart">Your cart is empty.</p>';
+
+        cartTotalDisplay.textContent = "₹0";
+        saveCart();
+        return;
+    }
+
+    let cartHTML = "";
+    let total = 0;
+
+    cart.forEach(function (item) {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        cartHTML += `
+            <div class="cart-item">
+                <div class="cart-item-details">
+                    <h4>${item.name}</h4>
+                    <p>₹${item.price.toLocaleString("en-IN")}</p>
+
+                    <div class="quantity-controls">
+                        <button type="button"
+                            onclick="changeQuantity(${item.id}, -1)">−</button>
+
+                        <span>${item.quantity}</span>
+
+                        <button type="button"
+                            onclick="changeQuantity(${item.id}, 1)">+</button>
+                    </div>
+
+                    <button type="button"
+                        class="remove-item"
+                        onclick="removeFromCart(${item.id})">
+                        Remove
+                    </button>
+                </div>
+
+                <strong>₹${itemTotal.toLocaleString("en-IN")}</strong>
+            </div>
+        `;
+    });
+
+    cartItemsContainer.innerHTML = cartHTML;
+
+    cartTotalDisplay.textContent = "₹" + total.toLocaleString("en-IN");
+
+    saveCart();
+}
+
+document.querySelectorAll(".add-to-cart").forEach(function (button) {
+    button.addEventListener("click", function () {
+        const productCard = button.closest(".product-card");
+
+        if (!productCard) {
+            return;
+        }
+
+        const nameElement = productCard.querySelector("h3");
+        const priceElement = productCard.querySelector(".price");
+
+        if (!nameElement || !priceElement) {
+            alert("Product name or price was not found.");
+            return;
+        }
+
+        const productName = nameElement.textContent.trim();
+        const priceText = priceElement.textContent.replace(/,/g, "");
+        const priceMatch = priceText.match(/\d+(\.\d+)?/);
+
+        if (!priceMatch) {
+            alert("Could not read the product price.");
+            return;
+        }
+
+        const productPrice = Number(priceMatch[0]);
+
+        const productId = Array.from(
+            document.querySelectorAll(".product-card")
+        ).indexOf(productCard);
+
+        const existingItem = cart.find(function (item) {
+            return item.id === productId;
+        });
+
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            cart.push({
+                id: productId,
+                name: productName,
+                price: productPrice,
+                quantity: 1
+            });
+        }
+
+        updateCart();
+
+        cartPanel.classList.add("open");
+    });
+});
+
+function changeQuantity(id, amount) {
+    const item = cart.find(function (product) {
+        return product.id === id;
+    });
+
+    if (!item) {
+        return;
+    }
+
+    item.quantity += amount;
+
+    if (item.quantity <= 0) {
+        cart = cart.filter(function (product) {
+            return product.id !== id;
+        });
+    }
+
+    updateCart();
+}
+
+function removeFromCart(id) {
+    cart = cart.filter(function (item) {
+        return item.id !== id;
+    });
+
+    updateCart();
+}
+
+document.getElementById("cart-button").addEventListener("click", function () {
+    cartPanel.classList.add("open");
+});
+
+document.getElementById("close-cart").addEventListener("click", function () {
+    cartPanel.classList.remove("open");
+});
+
+updateCart();
+
+const wishlistButtons = document.querySelectorAll(".product-card .wishlist");
+const wishlistCountDisplay = document.getElementById("wishlist-count");
+
+let wishlist = [];
+
+try {
+    const savedWishlist = JSON.parse(
+        localStorage.getItem("flashCartWishlist")
+    );
+
+    if (Array.isArray(savedWishlist)) {
+        // Keep only product names so sorting doesn't change saved items
+        wishlist = savedWishlist.filter(function (item) {
+            return typeof item === "string";
+        });
+    }
+} catch (error) {
+    wishlist = [];
+}
+
+function updateWishlist() {
+    wishlistCountDisplay.textContent = wishlist.length;
+
+    wishlistButtons.forEach(function (button) {
+        const card = button.closest(".product-card");
+        const nameElement = card.querySelector("h3");
+        const productName = nameElement.textContent.trim();
+        const isActive = wishlist.includes(productName);
+
+        button.classList.toggle("active", isActive);
+        button.style.color = isActive ? "#C65335" : "";
+        button.textContent = isActive ? "♥" : "♡";
+        button.setAttribute("aria-pressed", String(isActive));
+    });
+
+    localStorage.setItem(
+        "flashCartWishlist",
+        JSON.stringify(wishlist)
+    );
+}
+
+
+wishlistButtons.forEach(function (button) {
+    button.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        const card = button.closest(".product-card");
+        const productName = card.querySelector("h3").textContent.trim();
+
+        if (wishlist.includes(productName)) {
+            wishlist = wishlist.filter(function (name) {
+                return name !== productName;
+            });
+        } else {
+            wishlist.push(productName);
+        }
+
+        updateWishlist();
+    });
+});
+updateWishlist();
+
+</script>
+</html>
